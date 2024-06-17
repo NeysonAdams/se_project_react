@@ -1,0 +1,188 @@
+@import url('./fonts.css');
+.modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    font-family: 'CabinetGrotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    z-index: 4;
+  }
+
+  
+  .modal__container {
+    position: relative;
+    width: 496px;
+    justify-self: center;
+    align-self: center;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal__close-button {
+    background-image: url(../assets/close.svg);
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 20px;
+    right: 20px;
+  }
+
+  .modal__container-image {
+    position: relative;
+    width: 498px;
+    justify-self: center;
+    align-self: center;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .modal__title{
+    text-align: left;
+    margin: 29px 20px;
+  }
+
+  .modal__form{
+    gap: 24px;
+  }
+
+  .modal__fieldset {
+    margin: 12px 20px;
+    padding: 0;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    
+    text-align: left;
+  }
+
+  .modal__form-label{
+    text-align: left;
+    width: 100%;
+
+  }
+
+  .modal__form-label-error{
+    color: red;
+
+  }
+
+  .modal__form-input {
+    width: 100%;
+    height: 24px;
+    border: none;
+    padding: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    align-items: center;
+  }
+
+  .modal__form-input-error {
+    color: red;
+    border-bottom: 1px solid red;
+  }
+
+  .modal__submit-button{
+    max-width: 124px;
+    background-color: #000;
+    color: #fff;
+    padding: 8px 16px;
+    text-align: center;
+    border-radius: 4px;
+    margin: 10px 20px 36px 0;
+  }
+  .modal__submit-button:hover{
+    opacity: 0.6;
+  }
+
+  .modal__submit-button-inactive{
+    opacity: 0.3;
+  }
+
+  
+  .modal__image-mask{
+    width: 498px;
+    height: 498px;
+    overflow: hidden;
+  }
+
+  .modal__image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .modal_image-title{
+    font-family: 'CabinetGrotesk', sans-serif;
+    text-align: left;
+    margin: 19px 0 0 32px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  .modal__image-weather{
+    font-family: 'CabinetGrotesk', sans-serif;
+    text-align: left;
+    margin: 12px 0 32px 32px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+ .modal__form-radio{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  margin-right: 5px;
+  margin-top: 0;
+  margin-bottom: 0;
+  vertical-align: middle;
+ }
+
+ .modal__form-radio:checked {
+  background-color: white;
+}
+
+.modal__form-radio:checked::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin: 2px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 1);
+}
+
+.modal__form-label-radio{
+  color: black;
+  opacity: 0.5;
+}
+
+.modal__form-radio:checked + .modal__form-label-radio {
+  
+  opacity: 1;
+}
