@@ -15,7 +15,7 @@ const Main = ({cardsData, weatherData, onItemModalOpen})=>{
             </p>
             <ul className="main__grid">
                 {cardsData.map((item) => (
-                    <ItemCard item={item} onItemModalOpen={onItemModalOpen}/>
+                    <ItemCard key={item._id} item={item} onItemModalOpen={onItemModalOpen}/>
                 ))}
             </ul>
         </main>

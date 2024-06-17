@@ -16,6 +16,7 @@ function App() {
   const [isModalFormOpen, setIsModalFormOpen] = useState(false);
   const [isModalImageOpen, setIsModalImageOpen] = useState(false);
   const [imageModalData, setModalImageData] = useState([]);
+  const [formValidators, setFormValidators] = useState([]);
 
   useEffect(() => {
     getWeather()
@@ -30,11 +31,15 @@ function App() {
   useEffect(()=>{
     if(isModalFormOpen){
       const modalsForms = document.querySelectorAll(".modal__form");
-      console.log(modalsForms);
-      modalsForms.forEach((form) => {
+      const newValidators = Array.from(modalsForms).map((form) => {
         const formValidator = new FormValidator(optionsValidation, form);
         formValidator.enableValidation();
+        return formValidator;
       });
+      setFormValidators(newValidators);
+    }else{
+      formValidators.forEach(validator => validator.removeValidation());
+      setFormValidators([]);
     }
   },[isModalFormOpen])
 
@@ -56,6 +61,7 @@ function App() {
   };
 
   const onSubmit = (data)=>{
+    data._id=clothingItems.length+1;
     setClothingItems(prevItems => [...prevItems, data]);
   }
 

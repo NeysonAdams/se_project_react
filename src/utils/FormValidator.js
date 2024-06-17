@@ -4,6 +4,7 @@ export class FormValidator {
       this._formElement = formElement;
       this._getViews();
     }
+
   
     _getViews() {
       this._inputList = Array.from(
@@ -13,6 +14,11 @@ export class FormValidator {
       this._buttonElement = this._formElement.querySelector(
         this._options.submitButtonSelector
       );
+
+      this._handleInput = (event) => {
+        this._checkInputValidity(event.target);
+        this.toggleButtonState();
+      }
     }
   
     _showInputError(inputElement, errorMessage) {
@@ -62,15 +68,21 @@ export class FormValidator {
     _setEventListeners() {
       this.toggleButtonState();
       this._inputList.forEach((inputElement) => {
-        inputElement.addEventListener("input", (event) => {
-          this._checkInputValidity(inputElement);
-          this.toggleButtonState();
-        });
+        inputElement.addEventListener("input", this._handleInput);
       });
     }
   
     enableValidation() {
       this._setEventListeners();
     }
+
+    removeValidation() {
+      this._inputList.forEach((inputElement) => {
+        inputElement.removeEventListener("input", this._handleInput);
+      });
+    }
+
+    
+    
   }
   

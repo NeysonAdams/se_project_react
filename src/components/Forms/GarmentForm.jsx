@@ -13,7 +13,7 @@ const GarmentForm = () => {
         <input id='imageUrl' type='url' name='imageUrl' className='modal__form-input' placeholder='Image URL' required/>
       </fieldset>
       <fieldset className='modal__fieldset'>
-        <label className="modal__form-label">Select the weather type:</label>
+        <legend className="modal__form-label">Select the weather type:</legend>
         <span>
           <input className="modal__form-radio" type="radio" name="options" value="Hot" defaultChecked /> 
           <label className="modal__form-label-radio"> Hot</label>
