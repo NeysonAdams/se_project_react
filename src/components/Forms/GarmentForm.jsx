@@ -15,16 +15,16 @@ const GarmentForm = () => {
       <fieldset className='modal__fieldset'>
         <legend className="modal__form-label">Select the weather type:</legend>
         <span>
-          <input className="modal__form-radio" type="radio" name="options" value="Hot" defaultChecked /> 
-          <label className="modal__form-label-radio"> Hot</label>
+          <input id='hot' className="modal__form-radio" type="radio" name="options" value="Hot" defaultChecked /> 
+          <label htmlFor='hot' className="modal__form-label-radio"> Hot</label>
         </span>
         <span>
-          <input className="modal__form-radio" type="radio" name="options" value="Warm" />
-          <label className="modal__form-label-radio"> Warm</label>
+          <input id='warm' className="modal__form-radio" type="radio" name="options" value="Warm" />
+          <label htmlFor='warm' className="modal__form-label-radio"> Warm</label>
         </span>
         <span>
-          <input className="modal__form-radio" type="radio" name="options" value="Cold" />
-          <label className="modal__form-label-radio"> Cold</label>
+          <input id='cold' className="modal__form-radio" type="radio" name="options" value="Cold" />
+          <label htmlFor='cold' className="modal__form-label-radio"> Cold</label>
         </span>
       </fieldset>
     </>
