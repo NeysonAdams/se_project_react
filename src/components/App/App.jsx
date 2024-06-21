@@ -18,7 +18,7 @@ import "./App.css"
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
-  const [clothingItems, setClothingItems] = useState([]);
+  const [clothingItems, setClothingItems] = useState(null);
   const [isModalFormOpen, setIsModalFormOpen] = useState(false);
   const [isModalImageOpen, setIsModalImageOpen] = useState(false);
   const [imageModalData, setModalImageData] = useState([]);
