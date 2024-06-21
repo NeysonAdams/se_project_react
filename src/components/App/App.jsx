@@ -4,11 +4,9 @@ import Header from '../Header/Header'
 import Main from '../Main/Main'
 import Profile from '../Profile/Profile';
 import Footer from '../Footer/Footer'
-import ModalWithForm from '../ModalWithForm/ModalWithForm'
 import AddItemModal from '../AddItemModal/AddItemModal';
 import ConfirmationModal from '../ConfirmationModal/ConfirmationModal';
 import ItemModal from '../ItemModal/ItemModal'
-import GarmentForm from '../Forms/GarmentForm'
 import { optionsValidation } from '../../utils/constants'
 import { getWeather } from '../../utils/weatherApi'
 import { FormValidator } from '../../utils/FormValidator'
@@ -18,7 +16,7 @@ import "./App.css"
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
-  const [clothingItems, setClothingItems] = useState(null);
+  const [clothingItems, setClothingItems] = useState([]);
   const [isModalFormOpen, setIsModalFormOpen] = useState(false);
   const [isModalImageOpen, setIsModalImageOpen] = useState(false);
   const [imageModalData, setModalImageData] = useState([]);
