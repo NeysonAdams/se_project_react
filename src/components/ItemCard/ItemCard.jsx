@@ -10,7 +10,7 @@ const ItemCard = ({item, onItemModalOpen})=>{
 
     return (
         <li className='card' onClick={handleItemClick}>
-            <img className='card__image' src={curentItem.link} alt={curentItem.name} />
+            <img className='card__image' src={curentItem.imageUrl} alt={curentItem.name} />
             <p className='card__label'>{curentItem.name}</p>
         </li>
     );
