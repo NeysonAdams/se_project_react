@@ -26,7 +26,7 @@ const ItemModal = ({data, onClose})=>{
         <div className='modal' onClick={handleOverlayClick}>
             <div className='modal__container-image'>
                 <div className='modal__image-mask'>
-                    <img className='modal__image' src={data.link} alt={data.name}/>
+                    <img className='modal__image' src={data.imageUrl} alt={data.name}/>
                 </div>
                 <button className="modal__close-button" type="button" onClick={onClose}></button>
                 <p className='modal_image-title'>{data.name}</p>

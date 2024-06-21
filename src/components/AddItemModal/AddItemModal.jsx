@@ -32,7 +32,7 @@ const AddItemModal = ({ isOpen, onAddItem, onCloseModal }) => {
         event.preventDefault();
         const newItem = {
             name: name,
-            link: imageUrl,
+            imageUrl: imageUrl,
             weather: weather.toLowerCase()
         };
         onAddItem(newItem);
