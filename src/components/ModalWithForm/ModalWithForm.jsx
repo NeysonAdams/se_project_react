@@ -23,20 +23,7 @@ const ModalWithForm = ({ title, name, buttonText, onClose, onSubmit, children })
       };
 
       const handleSubmit = (event) => {
-        event.preventDefault();
-        const form = event.target;
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
-        console.log(data);
-        const newCardData = {
-            name: data.nameInput,
-            link: data.imageUrl,
-            weather: data.options.toLowerCase()
-        }
-        
-        onSubmit(newCardData);
-        form.reset();
-        onClose();
+        onSubmit(event);
       };
       
     

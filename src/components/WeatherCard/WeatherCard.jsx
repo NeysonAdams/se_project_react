@@ -39,7 +39,7 @@ const WeatherCard = ({ temperature, weather }) => {
 
     return (
       <div className={`weather-card ${skyStatus}`}>
-        <p className='weather-card__temperature'>{temperature}°F</p>
+        <p className='weather-card__temperature'>{temperature}</p>
         <img className='weather-card__icon-sun' src={sun} alt='sun icon'/>
         { (weather === "Clouds" ) && isDayTime() && (
           <img className='weather-card__icon' src={clouds_daily} alt='clouds icon'/>

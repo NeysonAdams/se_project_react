@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import "./ItemModal.css"
 
-const ItemModal = ({data, onClose})=>{
+const ItemModal = ({data, onClose, onDelete})=>{
 
     useEffect(() => {
         const handleEscapeClose = (event) => {
@@ -22,6 +22,11 @@ const ItemModal = ({data, onClose})=>{
         }
       };
 
+    const handleDeleteItem = ()=>{
+      onDelete(data);
+      onClose();
+    }
+
     return(
         <div className='modal' onClick={handleOverlayClick}>
             <div className='modal__container-image'>
@@ -29,7 +34,10 @@ const ItemModal = ({data, onClose})=>{
                     <img className='modal__image' src={data.link} alt={data.name}/>
                 </div>
                 <button className="modal__close-button" type="button" onClick={onClose}></button>
-                <p className='modal_image-title'>{data.name}</p>
+                <div className='modal_image__ttile-container'>
+                  <p className='modal_image-title'>{data.name}</p>
+                  <button type='button' className='modal_image__delete' onClick={handleDeleteItem}>Delete Item</button>
+                </div>
                 <p className='modal__image-weather'>Weather: {data.weather}</p>
             </div>
         </div>

@@ -15,7 +15,10 @@ const getWeatherState = (temperature)=>{
 const getDataFromApi = (jsonData) =>
 {
     return {
-        temperature: jsonData.main.temp,
+        temperature:{
+          F:`${Math.round(jsonData.main.temp)}°F`,
+          C:`${Math.round((jsonData.main.temp - 32) * 5/9)}°C`
+        } ,
         precipitation: jsonData.weather[0].main,
         weather: getWeatherState(jsonData.main.temp),
         location: jsonData.name

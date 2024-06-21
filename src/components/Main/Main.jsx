@@ -1,17 +1,20 @@
-import React , { useState, useEffect } from 'react';
+import React , { useContext } from 'react';
 import WeatherCard from '../WeatherCard/WeatherCard';
 import ItemCard from '../ItemCard/ItemCard';
 import './Main.css'; 
 
+import CurrentTemperatureUnitContext from '../../context/CurrentTemperatureUnitContext';
+
 const Main = ({cardsData, weatherData, onItemModalOpen})=>{
     
+    const {currentTemperatureUnit, handleToggleSwitchChange} = useContext(CurrentTemperatureUnitContext);
 
     return (
         <main className="main">
-            <WeatherCard temperature={weatherData ? weatherData.temperature : '--'}
+            <WeatherCard temperature={weatherData ? weatherData.temperature[currentTemperatureUnit] : '--'}
             weather={weatherData ? weatherData.precipitation : 'Clear'}/>
             <p className='main__grid-label'>
-                Today is {weatherData ? weatherData.temperature : '--'}°F / You may want to wear:
+                Today is {weatherData ? weatherData.temperature[currentTemperatureUnit] : '--'} / You may want to wear:
             </p>
             <ul className="main__grid">
                 {cardsData.map((item) => (

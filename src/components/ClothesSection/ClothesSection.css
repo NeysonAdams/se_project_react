@@ -1,0 +1,40 @@
+@import url('../../vendor/fonts.css');
+.clothes{
+    width: 100%;
+}
+
+.clothes__title{
+
+    font-family: 'CabinetGrotesk', sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+.clothes__title-label{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.8px;
+}
+
+.clothes__title-button{
+    font-family: 'CabinetGrotesk', sans-serif;
+    background-color:transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.8px;
+}
+
+.clothes__grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 323px);
+    grid-template-rows: repeat(auto-fit, 326px);
+    grid-gap: 15px;
+    list-style-type: none;
+    margin: 0 auto;
+    margin-top: 32px;
+    padding: 0;
+    justify-content: center;
+}

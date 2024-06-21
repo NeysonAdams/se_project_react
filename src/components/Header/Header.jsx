@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 import logo from '../../assets/Logo.svg';
 import avatar from '../../assets/avatar.png'
+import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 
 const Header = ({weatherData, onOpenModal}) =>{
    const [currentDate, setCurrentDate] = useState('June 15');
@@ -14,15 +16,21 @@ const Header = ({weatherData, onOpenModal}) =>{
     return (
         <header className="header">
           <div className='header__component'>
-            <img className="header__logo" src={logo} alt='logo'/>
+            <Link to="/se_project_react">
+              <img className="header__logo" src={logo} alt='logo'/>
+            </Link>
             <p className="header__date-location">
               {currentDate}, {weatherData ? weatherData.location : '...'}</p>
           </div>
           <div className='header__component'>
+            <ToggleSwitch/>
             <button className="header__button" type='button' onClick={onOpenModal}>
             + Add clothes
             </button>
-            <span className="header__username">Terrence Tegegne</span>
+            
+              <Link className="header__username" to="/se_project_react/profile">Terrence Tegegne</Link>
+              
+            
             <div className="header__avatar" >
                 <img className="header__avatar-image" src={avatar} alt="User Avatar" />
             </div>
