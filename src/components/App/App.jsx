@@ -83,7 +83,8 @@ function App() {
   };
 
   const handleAddItem  = (item)=>{
-    item._id=clothingItems.length+1;
+    const maxId = clothingItems.reduce((max, current) => (current._id > max ? current._id : max), 0);
+    item._id=maxId+1;
     addItem(item)
     .then(() => {
       setClothingItems(prevItems => [item, ...prevItems]);
