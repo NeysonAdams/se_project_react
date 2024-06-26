@@ -17,7 +17,9 @@ const Main = ({cardsData, weatherData, onItemModalOpen})=>{
                 Today is {weatherData ? weatherData.temperature[currentTemperatureUnit] : '--'} / You may want to wear:
             </p>
             <ul className="main__grid">
-                {cardsData.map((item) => (
+                {cardsData.filter((item)=>{
+                    return item.weather == weatherData.weather;
+                }).map((item) => (
                     <ItemCard key={item._id} item={item} onItemModalOpen={onItemModalOpen}/>
                 ))}
             </ul>
