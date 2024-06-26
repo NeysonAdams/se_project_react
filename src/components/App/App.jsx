@@ -120,13 +120,13 @@ function App() {
       value={{currentTemperatureUnit, handleToggleSwitchChange}}>
         <Header weatherData={weatherData} onOpenModal={openFormModal}/>
         <Routes>
-          <Route exact path="/se_project_react" element={
+          <Route exact path="/" element={
             <Main  
             cardsData={clothingItems} 
             weatherData={weatherData} 
             onItemModalOpen={openImageModal}/>
             }/>
-          <Route exact path="/se_project_react/profile" element={
+          <Route exact path="/profile" element={
             <Profile  
             cardsData={clothingItems}
             onItemModalOpen={openFormModal}/>

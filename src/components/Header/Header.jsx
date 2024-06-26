@@ -16,7 +16,7 @@ const Header = ({weatherData, onOpenModal}) =>{
     return (
         <header className="header">
           <div className='header__component'>
-            <Link to="/se_project_react">
+            <Link to="/">
               <img className="header__logo" src={logo} alt='logo'/>
             </Link>
             <p className="header__date-location">
@@ -28,7 +28,7 @@ const Header = ({weatherData, onOpenModal}) =>{
             + Add clothes
             </button>
             
-              <Link className="header__username" to="/se_project_react/profile">Terrence Tegegne</Link>
+              <Link className="header__username" to="/profile">Terrence Tegegne</Link>
               
             
             <div className="header__avatar" >
