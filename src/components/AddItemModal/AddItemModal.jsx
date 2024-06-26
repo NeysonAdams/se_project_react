@@ -36,7 +36,6 @@ const AddItemModal = ({ isOpen, onAddItem, onCloseModal }) => {
             weather: weather.toLowerCase()
         };
         onAddItem(newItem);
-        onCloseModal();
     };
 
     return (
@@ -63,6 +62,7 @@ const AddItemModal = ({ isOpen, onAddItem, onCloseModal }) => {
                     id='imageUrl' 
                     type='url' 
                     name='imageUrl'
+                    value=""
                     onChange={handleImageUrlChange} 
                     className='modal__form-input' 
                     placeholder='Image URL' required/>

@@ -88,6 +88,7 @@ function App() {
     addItem(item)
     .then(() => {
       setClothingItems(prevItems => [item, ...prevItems]);
+      closeFormModal();
     })
     .catch(err => {
       console.error(err);

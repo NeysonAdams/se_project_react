@@ -1,4 +1,5 @@
 import { latitude, longitude, apiKey } from "./constants";
+import {handleServerResponce} from "./api"
 
 const endpoint = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiKey}&units=imperial`
 
@@ -27,11 +28,6 @@ const getDataFromApi = (jsonData) =>
 
 export const getWeather = ()=>{
     return fetch(endpoint)
-    .then(res=>{
-        if (res.ok) {
-            return res.json();
-          }
-          return Promise.reject(`Error: ${res.status}`);
-    })
+    .then(handleServerResponce)
     .then(jsonData => getDataFromApi(jsonData));
 }
