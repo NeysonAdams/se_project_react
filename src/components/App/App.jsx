@@ -103,7 +103,7 @@ function App() {
     removeItem(imageModalData._id)
       .then(() => {
         setClothingItems(prevItems => prevItems.filter(item => item._id !== imageModalData._id));
-        setConfirmationModalOpen(false);
+        handleCloseConfirmModal();
       })
       .catch(err => {
         console.error(err);
