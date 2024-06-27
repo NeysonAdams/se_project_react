@@ -3,13 +3,13 @@ import ItemCard from '../ItemCard/ItemCard';
 
 import './ClothesSection.css'
 
-const ClothesSection =({cardsData, onItemModalOpen})=>{
+const ClothesSection =({cardsData, onItemModalOpen, onModalFormOpen})=>{
 
     return (
         <div className='clothes'>
             <div className='clothes__title'>
                 <p className='clothes__title-label'>Your items</p>
-                <button className='clothes__title-button' type='button' onClick={onItemModalOpen}>+ Add new</button>
+                <button className='clothes__title-button' type='button' onClick={onModalFormOpen}>+ Add new</button>
             </div>
             <ul className="clothes__grid">
                 {cardsData.map((item) => (

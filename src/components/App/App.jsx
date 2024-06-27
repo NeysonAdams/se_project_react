@@ -130,7 +130,8 @@ function App() {
           <Route exact path="/profile" element={
             <Profile  
             cardsData={clothingItems}
-            onItemModalOpen={openImageModal}/>
+            onItemModalOpen={openImageModal}
+            onModalFormOpen={openFormModal}/>
             }/>
         </Routes>
         <Footer/>

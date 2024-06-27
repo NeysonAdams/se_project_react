@@ -62,7 +62,7 @@ const AddItemModal = ({ isOpen, onAddItem, onCloseModal }) => {
                     id='imageUrl' 
                     type='url' 
                     name='imageUrl'
-                    value=""
+                    value={imageUrl}
                     onChange={handleImageUrlChange} 
                     className='modal__form-input' 
                     placeholder='Image URL' required/>
