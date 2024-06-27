@@ -1,20 +1,10 @@
 import React, { useEffect } from 'react';
 import "./ConfirmationModal.css"
+import { useEscape } from '../../utils/popupUtils.js';
 
 const ConfirmationModal = ({isOpen, onConfirm, onClose})=>{
 
-    useEffect(() => {
-        const handleEscapeClose = (event) => {
-          if (event.key === 'Escape') {
-            onClose();
-          }
-        };
-    
-        document.addEventListener('keydown', handleEscapeClose);
-        return () => {
-          document.removeEventListener('keydown', handleEscapeClose);
-        };
-      }, [onClose]);
+    useEscape(onClose);
 
       const handleOverlayClick = (event) => {
         if (event.target.classList.contains('modal')) {

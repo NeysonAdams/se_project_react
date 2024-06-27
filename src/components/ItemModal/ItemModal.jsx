@@ -1,20 +1,10 @@
 import React, { useEffect } from 'react';
 import "./ItemModal.css"
+import { useEscape } from '../../utils/popupUtils';
 
 const ItemModal = ({data, onClose, onDelete})=>{
 
-    useEffect(() => {
-        const handleEscapeClose = (event) => {
-          if (event.key === 'Escape') {
-            onClose();
-          }
-        };
-    
-        document.addEventListener('keydown', handleEscapeClose);
-        return () => {
-          document.removeEventListener('keydown', handleEscapeClose);
-        };
-      }, [onClose]);
+    useEscape(onClose);
 
       const handleOverlayClick = (event) => {
         if (event.target.classList.contains('modal')) {
