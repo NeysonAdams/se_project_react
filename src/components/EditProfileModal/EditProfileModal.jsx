@@ -52,6 +52,7 @@ const EditProfileModal = ({isOpen, onUpdate, onCloseModal}) => {
                 name='nameInput' 
                 className='modal__form-input' 
                 placeholder='Name' 
+                value={name}
                 minLength={3} required />
         </fieldset>
         <fieldset className='modal__fieldset'>
@@ -60,7 +61,8 @@ const EditProfileModal = ({isOpen, onUpdate, onCloseModal}) => {
                 onChange={handleImageUrlChange}
                 id='urlInput' 
                 type='url' 
-                name='urlInput' 
+                name='urlInput'
+                value={imageUrl} 
                 className='modal__form-input' 
                 placeholder='Avatar URL' required/>
         </fieldset>

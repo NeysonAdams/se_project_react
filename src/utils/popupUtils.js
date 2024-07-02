@@ -4,7 +4,7 @@ export function useEscape(closeModal) {
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === "Escape") {
-        closePopup();
+        closeModal();
       }
     };
 
