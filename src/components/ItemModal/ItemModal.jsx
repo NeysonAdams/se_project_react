@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect,useRef } from 'react';
 import "./ItemModal.css"
 import { useEscape } from '../../utils/popupUtils';
+import CurrentUserContext from '../../context/CurrentUserContext';
 
 const ItemModal = ({data, onClose, onDelete})=>{
-
+   const {currentUser} = useContext(CurrentUserContext);
+   const isOwn = data.owner === currentUser._id;
     useEscape(onClose);
 
       const handleOverlayClick = (event) => {
@@ -26,7 +28,7 @@ const ItemModal = ({data, onClose, onDelete})=>{
                 <button className="modal__close-button" type="button" onClick={onClose}></button>
                 <div className='modal_image__ttile-container'>
                   <p className='modal_image-title'>{data.name}</p>
-                  <button type='button' className='modal_image__delete' onClick={handleDeleteItem}>Delete Item</button>
+                  <button type='button' className={` modal_image__delete ${isOwn ? 'modal_image__delete_visible' : 'modal_image__delete_hidden'}`}  onClick={handleDeleteItem}>Delete Item</button>
                 </div>
                 <p className='modal__image-weather'>Weather: {data.weather}</p>
             </div>

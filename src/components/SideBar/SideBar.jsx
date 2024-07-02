@@ -1,14 +1,24 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import avatar from '../../assets/avatar.png'
+
+import CurrentUserContext from '../../context/CurrentUserContext';
 import "./SideBar.css"
 
-const SideBar = ({}) =>{
+const SideBar = ({onEditOpen, onLogOut}) =>{
+    const {currentUser} = useContext(CurrentUserContext);
     return(
+        
         <div className="sidebar">
-            <span className="sidebar__avatar" >
-                <img className="sidebar__avatar-image" src={avatar} alt="User Avatar" />
+            <span className='sidebar__raw'>
+            <div className="sidebar__avatar" >
+                <img className="sidebar__avatar-image" src={currentUser.avatar} alt="User Avatar" />
+            </div>
+            <p className="sidebar__username" >{currentUser.name}</p>
             </span>
-            <p className="sidebar__username" to="/se_project_react/profile">Terrence Tegegne</p>
+            <div className='sidebar__buttons'>
+                <button className="sidebar__button" onClick={onEditOpen}>Change profile data</button>
+                <button className="sidebar__button" onClick={onLogOut}>Log out</button>
+            </div>
         </div>
     )
 }

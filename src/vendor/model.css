@@ -237,3 +237,11 @@
   line-height: 24px;
   cursor: pointer;
 }
+
+.modal_image__delete_visible{
+  visibility: visible;
+}
+
+.modal_image__delete_hidden{
+  visibility: hidden;
+}

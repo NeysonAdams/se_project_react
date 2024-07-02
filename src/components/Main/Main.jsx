@@ -5,7 +5,7 @@ import './Main.css';
 
 import CurrentTemperatureUnitContext from '../../context/CurrentTemperatureUnitContext';
 
-const Main = ({cardsData, weatherData, onItemModalOpen})=>{
+const Main = ({cardsData, weatherData, onItemModalOpen, onLike})=>{
     
     const {currentTemperatureUnit, handleToggleSwitchChange} = useContext(CurrentTemperatureUnitContext);
     
@@ -24,7 +24,7 @@ const Main = ({cardsData, weatherData, onItemModalOpen})=>{
                     cardsData.filter((item) => {
                         return weatherType ? item.weather === weatherType : false;
                     }).map((item) => (
-                        <ItemCard key={item._id} item={item} onItemModalOpen={onItemModalOpen} />
+                        <ItemCard key={item._id} item={item} onItemModalOpen={onItemModalOpen} onLike={onLike}/>
                     ))
                 }
             </ul>

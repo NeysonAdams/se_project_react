@@ -15,16 +15,35 @@
     object-fit: cover;
 }
 
+.card__title{
+    position: absolute;
+    margin: 0 auto 0 auto;
+    top: 15px;
+    display: inline-flex;
+}
+
 .card__label{
     font-family: 'CabinetGrotesk', sans-serif;
-    position: absolute;
-    margin: 15px auto 0 auto;
     background-color: white;
     font-size: 16px;
     font-weight: 700;
     line-height: 20px;
-    top: 15px;
     padding: 2px 12px;
     color: rgba(0, 0, 0, 0.6);
     border-radius: 4px;
+}
+
+.card__like-button{
+    width: 18px;
+    height: 15px;
+    background-color: transparent;
+    background-image: url('../../assets/heart.svg');
+    background-size: cover;
+    border: none;
+    margin: 20px 0 0 10px;
+    cursor: pointer;
+}
+
+.card__like-button-active{
+    background-image: url('../../assets/heart_active.svg');
 }
