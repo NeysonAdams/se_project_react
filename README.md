@@ -49,7 +49,7 @@ Welcome to the WTWR (What to Wear) project! This frontend application helps user
     ```bash
         npm start
     ```
-    rinning Dev Mode
+    runing in Dev Mode
     ```bash
         npm run dev
     ```
