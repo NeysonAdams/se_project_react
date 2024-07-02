@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import "./WeatherCard.css";
 
 import clouds_daily from "../../assets/cloudsun.svg";
@@ -15,7 +15,10 @@ import nightRain from "../../assets/night_rain.svg";
 import nightThunder from "../../assets/night_thunderstorm.svg";
 import nightSnow from "../../assets/night_snow.svg";
 
+import CurrentTemperatureUnitContext from '../../context/CurrentTemperatureUnitContext';
+
 const WeatherCard = ({ temperature, weather }) => {
+  const {currentTemperatureUnit, handleToggleSwitchChange} = useContext(CurrentTemperatureUnitContext);
     const [skyStatus, setSkyStatus] = useState("weather-card__clear_sky");
 
     const isDayTime = () => {
