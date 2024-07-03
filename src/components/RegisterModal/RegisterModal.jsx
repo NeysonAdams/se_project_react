@@ -59,6 +59,7 @@ const RegisterModal = ({isOpen, onSighUp, onCloseModal}) => {
           <label htmlFor='emailReg' className="modal__form-label">Email*</label>
           <input 
                 onChange={handleEmailChange}
+                value={email}
                 id='emailReg' 
                 type='email' 
                 name='emailInput' 
@@ -69,6 +70,7 @@ const RegisterModal = ({isOpen, onSighUp, onCloseModal}) => {
           <label htmlFor='passwordReg' className="modal__form-label" >Password*</label>
           <input 
                 onChange={handlePasswordChange}
+                value={password}
                 id='passwordReg' 
                 type='password' 
                 name='passwordInput' 
@@ -80,6 +82,7 @@ const RegisterModal = ({isOpen, onSighUp, onCloseModal}) => {
           <label htmlFor='nameInput' className="modal__form-label">Name*</label>
           <input 
                 onChange={handleNameChange}
+                value={name}
                 id='nameInput' 
                 type='text' 
                 name='nameInput' 
@@ -91,6 +94,7 @@ const RegisterModal = ({isOpen, onSighUp, onCloseModal}) => {
           <label htmlFor='urlInput' className="modal__form-label" >Avatar URL*</label>
           <input 
                 onChange={handleImageUrlChange}
+                value={imageUrl}
                 id='urlInput' 
                 type='url' 
                 name='urlInput' 
