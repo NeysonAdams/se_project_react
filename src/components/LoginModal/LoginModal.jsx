@@ -44,6 +44,7 @@ const LoginModal = ({isOpen, onSignIn, onCloseModal}) => {
           <label htmlFor='email' className="modal__form-label">Email*</label>
           <input 
                 onChange={handleEmailChange}
+                value={email}
                 id='email' 
                 type='email' 
                 name='emailInput' 
@@ -54,6 +55,7 @@ const LoginModal = ({isOpen, onSignIn, onCloseModal}) => {
           <label htmlFor='passwordInput' className="modal__form-label" >Password*</label>
           <input 
                 onChange={handlePasswordChange}
+                value={password}
                 id='passwordInput' 
                 type='password' 
                 name='passwordInput' 
