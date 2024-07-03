@@ -123,11 +123,9 @@ function App() {
       (max, current) => (current._id > max ? current._id : max),
       0
     );
-    item._id = maxId + 1;
-    item.likes = [];
     addItem(item)
-      .then(() => {
-        setClothingItems((prevItems) => [item, ...prevItems]);
+      .then((newitem) => {
+        setClothingItems((prevItems) => [newitem, ...prevItems]);
         closeFormModal();
       })
       .catch((err) => {
