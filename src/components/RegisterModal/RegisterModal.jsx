@@ -4,11 +4,12 @@ import ModalWithForm from '../ModalWithForm/ModalWithForm'
 import './RegisterModal.css'
 
 
-const RegisterModal = ({isOpen, onSighUp, onCloseModal}) => {
+const RegisterModal = ({isOpen, onSighUp, onCloseModal, onSwitToLogin}) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
     const [imageUrl, setImageUrl] = useState('');
+    const dopButton = {name: "or Login", action: onSwitToLogin};
 
     useEffect(()=>{
       if(isOpen){
@@ -54,6 +55,7 @@ const RegisterModal = ({isOpen, onSighUp, onCloseModal}) => {
         buttonText="Sign Up"
         onClose={onCloseModal}
         onSubmit={handleSubmit}
+        dopButton={dopButton}
       >
         <fieldset className='modal__fieldset'>
           <label htmlFor='emailReg' className="modal__form-label">Email*</label>

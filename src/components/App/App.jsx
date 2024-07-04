@@ -177,6 +177,16 @@ function App() {
     setIsModalEdtiOpen(false);
   };
 
+  const handleSwitchToSignUp = ()=>{
+    handleLoginModalClose();
+    handleRegistrationModalOpen();
+  }
+
+  const handleSwitchToLogin = ()=>{
+    handleRegistrartionModalClose();
+    handleLoginModalOpen();
+  }
+
   const handleOnSignUp = (data) => {
     signUp(data)
       .then((res) => {
@@ -286,11 +296,13 @@ function App() {
             isOpen={isModalRegistraionOpen}
             onSighUp={handleOnSignUp}
             onCloseModal={handleRegistrartionModalClose}
+            onSwitToLogin={handleSwitchToLogin}
           />
           <LoginModal
             isOpen={isModalLoginOpen}
             onCloseModal={handleLoginModalClose}
             onSignIn={handleOnLogin}
+            onSingUpOpen={handleSwitchToSignUp}
           />
           <EditProfileModal
             isOpen={isModalEditOpen}

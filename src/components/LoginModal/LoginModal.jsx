@@ -4,9 +4,10 @@ import ModalWithForm from '../ModalWithForm/ModalWithForm'
 import './LoginModal.css'
 
 
-const LoginModal = ({isOpen, onSignIn, onCloseModal}) => {
+const LoginModal = ({isOpen, onSignIn, onCloseModal, onSingUpOpen}) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const dopButton = {name: "or Sign Up", action: onSingUpOpen};
 
     useEffect(()=>{
         if(isOpen){
@@ -39,6 +40,7 @@ const LoginModal = ({isOpen, onSignIn, onCloseModal}) => {
         buttonText="Log In"
         onClose={onCloseModal}
         onSubmit={handleSubmit}
+        dopButton={dopButton}
       >
         <fieldset className='modal__fieldset'>
           <label htmlFor='email' className="modal__form-label">Email*</label>
