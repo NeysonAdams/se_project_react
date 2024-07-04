@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './ModalWithForm.css'
 import { useEscape } from '../../utils/popupUtils';
 
-const ModalWithForm = ({ title, name, buttonText, onClose, onSubmit, children, dopButton: extraButton=null })=>
+const ModalWithForm = ({ title, name, buttonText, onClose, onSubmit, children, extraButton=null })=>
 {
     useEscape(onClose)
 
