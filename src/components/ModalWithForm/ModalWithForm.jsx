@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './ModalWithForm.css'
 import { useEscape } from '../../utils/popupUtils';
 
-const ModalWithForm = ({ title, name, buttonText, onClose, onSubmit, children, dopButton=null })=>
+const ModalWithForm = ({ title, name, buttonText, onClose, onSubmit, children, dopButton: extraButton=null })=>
 {
     useEscape(onClose)
 
@@ -27,7 +27,7 @@ const ModalWithForm = ({ title, name, buttonText, onClose, onSubmit, children, d
                     <fieldset className='modal__fieldset'>
                       <span className='modal__buttons-container'>
                         <button className="modal__submit-button" type="submit">{buttonText}</button> 
-                        { dopButton!=null && (<button className='modal__dop_button' onClick={dopButton.action}>{dopButton.name}</button>)}
+                        { extraButton!=null && (<button className='modal__dop_button' onClick={extraButton.action} type='button'>{extraButton.name}</button>)}
                       </span>
                     </fieldset>
                 </form>

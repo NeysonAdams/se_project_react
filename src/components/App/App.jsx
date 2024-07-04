@@ -296,7 +296,7 @@ function App() {
             isOpen={isModalRegistraionOpen}
             onSighUp={handleOnSignUp}
             onCloseModal={handleRegistrartionModalClose}
-            onSwitToLogin={handleSwitchToLogin}
+            onSwitchToLogin={handleSwitchToLogin}
           />
           <LoginModal
             isOpen={isModalLoginOpen}
