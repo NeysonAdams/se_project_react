@@ -1,4 +1,6 @@
-const baseUrl = 'http://localhost:3001';
+const baseUrl = process.env.NODE_ENV === "production" 
+? "https://api.ttnewwtwr.jumpingcrab.com"
+: "http://localhost:3001";
 
 const getToken = ()=> localStorage.getItem('jwt');
 
